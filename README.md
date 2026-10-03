@@ -71,10 +71,4 @@ The recommended setup uses the migrations and `DatabaseSeeder`. A MySQL export i
 - `app/Database/Seeds/DatabaseSeeder.php` provides sample records.
 - `public/assets` contains the original responsive interface.
 
-## Project status
 
-- Developer and profile information are set to Vincent Luke Elpedez.
-- All four routes have been verified in the local application.
-- The source files, migrations, seeder, SQL export, and README are tracked in the [GitHub repository](https://github.com/VincentLuke2002/TS12_taskfortoday).
-- `.env`, `vendor`, logs, sessions, and debug output are intentionally excluded from Git.
-- The remaining submission step is to deploy the application and provide its live hosted URL.
