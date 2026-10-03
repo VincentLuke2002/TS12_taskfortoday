@@ -27,7 +27,12 @@
             </nav>
         </header>
 
-        <main><?= $this->renderSection('content') ?></main>
+        <main>
+            <?php if ($message = session()->getFlashdata('message')): ?>
+                <div class="flash-message" role="status"><?= esc($message) ?></div>
+            <?php endif ?>
+            <?= $this->renderSection('content') ?>
+        </main>
 
         <footer class="site-footer">
             <p>Tasks for Today Management System</p>

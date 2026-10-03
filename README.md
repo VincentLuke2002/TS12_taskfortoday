@@ -1,6 +1,6 @@
 # Tasks for Today Management System
 
-A CodeIgniter 4 task-management application created for IT0049 Web System Technologies. It includes a date-filtered dashboard, a complete task list, a database-backed profile, and a static developer page.
+A CodeIgniter 4 task-management application created for IT0049 Web System Technologies. It includes a date-filtered dashboard, persistent task-completion controls, a complete task list, a database-backed profile, and a static developer page.
 
 ## Requirements
 
@@ -56,9 +56,11 @@ Open `http://localhost:8080`.
 | `/profile` | Displays the single demo user record |
 | `/about` | Identifies the developer and explains the project |
 
+Tasks can be marked complete or reopened from both the Today and Task List pages. Each change is saved to the database immediately.
+
 ## Database options
 
-The recommended setup uses the migrations and `DatabaseSeeder`. A MySQL export is also included at `database/tasks_for_today.sql`. Both seed paths create ten tasks across five dates and exactly one demo user. Dates are generated relative to the day the data is inserted, so the dashboard always receives current-day records.
+The recommended setup uses the migrations and `DatabaseSeeder`. A MySQL export is also included at `database/tasks_for_today.sql`. Both seed paths create ten tasks across five dates and exactly one user record. Dates are generated relative to the day the data is inserted, so the dashboard always receives current-day records.
 
 ## Project structure
 
@@ -69,4 +71,10 @@ The recommended setup uses the migrations and `DatabaseSeeder`. A MySQL export i
 - `app/Database/Seeds/DatabaseSeeder.php` provides sample records.
 - `public/assets` contains the original responsive interface.
 
+## Project status
 
+- Developer and profile information are set to Vincent Luke Elpedez.
+- All four routes have been verified in the local application.
+- The source files, migrations, seeder, SQL export, and README are tracked in the [GitHub repository](https://github.com/VincentLuke2002/TS12_taskfortoday).
+- `.env`, `vendor`, logs, sessions, and debug output are intentionally excluded from Git.
+- The remaining submission step is to deploy the application and provide its live hosted URL.

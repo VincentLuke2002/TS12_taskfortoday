@@ -36,7 +36,15 @@ $completion = $counts['all'] > 0 ? (int) round(($counts['completed'] / $counts['
     <?php else: ?>
         <div class="task-stack">
             <?php foreach ($tasks as $index => $task): ?>
-                <article class="task-card">
+                <?php $isCompleted = $task['status'] === 'completed'; ?>
+                <article class="task-card <?= $isCompleted ? 'is-completed' : '' ?>">
+                    <form class="task-check-form" method="post" action="<?= site_url('tasks/' . $task['id'] . '/toggle') ?>">
+                        <?= csrf_field() ?>
+                        <input type="hidden" name="return_to" value="today">
+                        <button class="task-check <?= $isCompleted ? 'is-checked' : '' ?>" type="submit" aria-label="<?= $isCompleted ? 'Reopen' : 'Complete' ?> <?= esc($task['title']) ?>" aria-pressed="<?= $isCompleted ? 'true' : 'false' ?>">
+                            <span class="sr-only"><?= $isCompleted ? 'Completed' : 'Not completed' ?></span>
+                        </button>
+                    </form>
                     <span class="task-number"><?= esc(str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT)) ?></span>
                     <div class="task-copy"><h3><?= esc($task['title']) ?></h3><p>Scheduled for <?= esc($date->format('F j, Y')) ?></p></div>
                     <span class="status status-<?= esc(str_replace('_', '-', $task['status'])) ?>"><?= esc(ucwords(str_replace('_', ' ', $task['status']))) ?></span>
