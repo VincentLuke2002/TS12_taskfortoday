@@ -69,10 +69,4 @@ The recommended setup uses the migrations and `DatabaseSeeder`. A MySQL export i
 - `app/Database/Seeds/DatabaseSeeder.php` provides sample records.
 - `public/assets` contains the original responsive interface.
 
-## Before submitting
 
-- Replace the demo name and email if your instructor expects your own details.
-- Set `app.developerName` to your full name.
-- Confirm all four routes work on the hosted server.
-- Commit the raw files, migrations, seeder, SQL export, and README to GitHub.
-- Do not commit `.env` or `vendor`.
